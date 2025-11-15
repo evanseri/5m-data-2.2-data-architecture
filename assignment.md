@@ -24,7 +24,17 @@ r = redis.Redis(
 Answer:
 
 ```python
+key = 'john_doe'
+fields = {
+    'name': 'John Doe',
+    'age': 35,
+    'email': 'john@email.com'
+}
 
+# Add the hash to Redis
+r.hset(key, mapping=fields)
+
+print(f'Hash {key} created with fields: {fields}')
 ```
 
 ### Question 2
