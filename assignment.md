@@ -51,13 +51,6 @@ bucket = client.get_bucket("gcp-public-data-landsat")
 Answer:
 
 ```python
-from google.cloud import storage
-
-# Initialize the client
-client = storage.Client()
-
-# Reference the bucket
-bucket = client.get_bucket("gcp-public-data-landsat")
 
 # Get blobs in the bucket and list the first 10 with their sizes
 blobs = bucket.list_blobs()
