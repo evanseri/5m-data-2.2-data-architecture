@@ -51,7 +51,27 @@ bucket = client.get_bucket("gcp-public-data-landsat")
 Answer:
 
 ```python
+from google.cloud import storage
 
+# Initialize the client
+client = storage.Client()
+
+# Reference the bucket
+bucket = client.get_bucket("gcp-public-data-landsat")
+
+# Get blobs in the bucket and list the first 10 with their sizes
+blobs = bucket.list_blobs()
+
+# Initialize a counter to keep track of the first 10 blobs
+count = 0
+max_count = 10
+
+print("First 10 objects in the bucket along with their sizes:")
+for blob in blobs:
+    print(f"Blob Name: {blob.name}, Size: {blob.size} bytes")
+    count += 1
+    if count >= max_count:
+        break
 ```
 
 ## Submission
